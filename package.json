@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production anna=banan dana=fish node app.js",
+    "dev": "cross-env NODE_ENV=development nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/AnnaGubar/nodejs-practice/issues"
   },
-  "homepage": "https://github.com/AnnaGubar/nodejs-practice#readme"
+  "homepage": "https://github.com/AnnaGubar/nodejs-practice#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.19"
+  }
 }
