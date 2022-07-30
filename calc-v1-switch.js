@@ -30,5 +30,4 @@ switch (operation) {
   default:
     console.log('Invalid operation')
     break;
-    // break;
 }
