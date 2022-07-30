@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "Coronavirus disease 2019",
+        "duration": "5 days to chronic",
+        "deaths": "6,395,753"
+    },
+    {
+        "id": "2",
+        "title": "Ebola",
+        "duration": "21 days",
+        "deaths": "50,000"
+    },
+    {
+        "id": "3",
+        "title": "Antrax",
+        "duration": "15 days",
+        "deaths": "150,000"
+    },
+    {
+        "title": "Manky feaver",
+        "duration": "5 days",
+        "deaths": "1000",
+        "id": "a4becba6-22b7-456c-8c4c-d938f4add3d2"
+    }
+]
