@@ -8,7 +8,7 @@ class Cars {
       throw new Error("Miss manufacterer field");
     }
 
-    const car = await repositoryCars.save(req.body);
+    const car = await repositoryCars.save(req.body,req.user._id);
     res.status(201).json({
       message: "Successes",
       code: 201,
@@ -18,7 +18,7 @@ class Cars {
 
   async getAll(req, res) {
     try {
-      const cars = await repositoryCars.getAll();
+      const cars = await repositoryCars.getAll(req.user._id);
       res.status(200).json({
         message: "Successes",
         code: 200,

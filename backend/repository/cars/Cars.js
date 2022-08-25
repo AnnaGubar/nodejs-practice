@@ -1,16 +1,16 @@
 const modelCar = require("../../models/Car");
 
 class Cars {
-  async save(data) {
+  async save(data,id) {
     try {
-      return await modelCar.create({ ...data });
+      return await modelCar.create({ ...data,user:id });
     } catch (error) {
       console.log(error.message.red);
     }
   }
-  async getAll() {
+  async getAll(id) {
     try {
-      return await modelCar.find({});
+      return await modelCar.find({user:id});
     } catch (error) {
       console.log(error.message.red);
     }

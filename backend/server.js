@@ -6,14 +6,17 @@ const connectDB = require("../config/db");
 
 const { PORT } = process.env;
 const app = express();
+
 app.use(express.json())
 
 // работа с формой
+// postman -> body -> x-www-form-urlencoded
 app.use(express.urlencoded({
   extended:false
 }))
 
 app.use("/api/v1", require("./routes/carsRoutes"))
+app.use("/", require("./routes/usersRoutes"))
 
   /*
 connectDB - асинхронная функция, вызвать можно тремя способами:
