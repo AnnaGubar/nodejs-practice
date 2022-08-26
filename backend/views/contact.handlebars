@@ -1,0 +1,39 @@
+<h3>Contact Form</h3>
+<h3>{{msg}}</h3>
+{{!-- <form method="post" action="send"> аналог ⬇ --}} 
+<form method="post" action="http://localhost:5000/send">
+
+  <div class="row">
+    <div class="six columns">
+      <label for="exampleEmailInput">Your email</label>
+      <input
+        name="userEmail"
+        class="u-full-width"
+        type="email"
+        placeholder="test@mailbox.com"
+        id="exampleEmailInput"
+      />
+    </div>
+
+    <div class="six columns">
+      <label for="exampleEmailInput">Your name</label>
+      <input
+        name="userName"
+        class="u-full-width"
+        type="text"
+        placeholder="Ivan Ivanovich"
+        id="exampleEmailInput"
+      />
+    </div>
+  </div>
+
+  <label for="exampleMessage">Message</label>
+  <textarea
+    name="userText"
+    class="u-full-width"
+    placeholder="Hi Dave …"
+    id="exampleMessage"
+  ></textarea>
+
+  <input class="button-primary" type="submit" value="Submit" />
+</form>

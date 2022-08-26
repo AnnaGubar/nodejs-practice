@@ -11,7 +11,7 @@ const router = Router();
 
 //localhost:5000/api/v1/cars
 
-router.post("/cars", authMiddleware,roleMiddleware(["admin","moderator"]), Cars.add);
-router.get("/cars", authMiddleware, roleMiddleware(["admin"]),Cars.getAll);
+router.post("/cars", authMiddleware, Cars.add);
+router.get("/cars", authMiddleware, Cars.getAll);
 
 module.exports = router;
