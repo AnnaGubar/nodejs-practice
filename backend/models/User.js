@@ -4,16 +4,19 @@ const userSchema = Schema(
   {
     userName: String,
     userPassword: String,
+    userRoles: [{ 
+      type: String,
+      ref: "role",
+    }],
     userEmail: {
       type: String,
       unique: true,
     },
-    token:{
+    token: {
       type: String,
       default: null,
     },
     hobbies: [],
-    // userRoles: [],
   },
   { timestamps: true, versionKey: false }
 );

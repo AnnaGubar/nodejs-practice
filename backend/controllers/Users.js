@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const JWT = require("jsonwebtoken");
 const User = require("../models/User");
+const Roles = require("../models/Role");
 
 class UserController {
   registration = asyncHandler(async (req, res) => {
@@ -28,11 +29,14 @@ class UserController {
     }
 
     const hashPassword = await bcrypt.hash(userPassword, 5);
+    const userRole = await Roles.findOne({value:"ADMIN"})
+    console.log(userRole)
 
     const candidate = await User.create({
       userName,
       userEmail,
       userPassword: hashPassword,
+      userRoles:userRole.value,
     });
     if (!candidate) {
       res.status(400);
@@ -82,6 +86,7 @@ class UserController {
       id: candidate._id,
       food: "pizza",
       drink: "beer",
+      roles: candidate.userRoles,
     };
 
     candidate.token = this.generateToken(payload);

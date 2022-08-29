@@ -17,6 +17,7 @@ class Cars {
   });
 
   async getAll(req, res) {
+    console.log("getAll controller")
     try {
       const cars = await repositoryCars.getAll(req.user._id);
       res.status(200).json({
